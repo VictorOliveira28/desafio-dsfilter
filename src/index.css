@@ -1,68 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --color-bg-header: #55bc04;
+  --color-bg-main: #c2c2c2;
+  --color-bg-card: #fff;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --color-bg-buttons: #55bc04;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color-font-primary: #fff;
+  --color-font-secondary: #c2c2c2;
+
+  --color-border-primary: #c2c2c2;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  font-family: "Roboto";
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+a,
+a:hover {
+  text-decoration: none;
+  color: unset;
 }
+
+html,
+body {
+  background-color: var(--color-bg-main);
+}
+
+main {
+  padding: 0 20px;
+}
+
+/* Button style */
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--color-bg-buttons);
+  color: var(--color-font-primary);
+  border: none;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-weight: 700;
+  font-size: 16px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/*Sections style*/
+
+.dsf-section-container {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }

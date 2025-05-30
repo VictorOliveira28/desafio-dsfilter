@@ -1,0 +1,21 @@
+.dsf-container {
+  width: 100%;
+  background-color: var(--color-bg-header);
+  display: flex;
+  justify-content: center;
+}
+
+.dsf-header {
+  width: 100%;
+  max-width: 960px;
+  height: 70px;
+  color: var(--color-font-primary);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dsf-quantity-products {
+  font-size: 12px;
+}
