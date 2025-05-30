@@ -1,14 +1,53 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./styles.css";
+import { useContext, useState } from "react";
+import { ContextValue } from "../../../utils/context-value";
 
 export default function Filter() {
+  const { setContextValue } = useContext(ContextValue);
+
+  type FormData = {
+    minValue?: number;
+    maxValue?: number;
+  };
+
+  const [formData, setFormData] = useState<FormData>({});
+
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    const min = Number(formData.minValue);
+    const max = Number(formData.maxValue);
+    setContextValue({
+      valueMin: isNaN(min) ? undefined : min,
+      valueMax: isNaN(max) ? undefined : max,
+    });
+  }
+
+  function handleInputChange(event: any) {
+    const value = event.target.value;
+    const name = event.target.name;
+
+    setFormData({ ...formData, [name]: value });
+  }
+
   return (
     <section className="dsf-section-container">
       <div className="dsf-filter-container">
         <div className="dsf-form-container">
-          <form className="dsf-form">
-            <input type="text" placeholder="Preço mínimo" />
-            <input type="text" placeholder="Preço máximo" />
-            <button>Filtrar</button>
+          <form className="dsf-form" onSubmit={handleSubmit}>
+            <input
+              name="minValue"
+              type="text"
+              placeholder="Preço mínimo"
+              onChange={handleInputChange}
+            />
+            <input
+              name="maxValue"
+              type="text"
+              placeholder="Preço máximo"
+              onChange={handleInputChange}
+            />
+            <button type="submit">Filtrar</button>
           </form>
         </div>
       </div>
