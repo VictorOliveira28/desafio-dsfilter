@@ -9,8 +9,10 @@
 
   --color-font-primary: #fff;
   --color-font-secondary: #c2c2c2;
+  --color-font-tertiary: #55bc04;
 
   --color-border-primary: #c2c2c2;
+  --color-border-secondary: #55bc04;
 }
 
 * {
