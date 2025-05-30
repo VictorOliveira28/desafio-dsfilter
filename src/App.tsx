@@ -13,11 +13,11 @@ function App() {
 
   return (
     <>
-      <Header />
       <ContextValue.Provider value={{ contextValue, setContextValue }}>
         <ContextProducts.Provider
           value={{ contextProducts, setContextProducts }}
         >
+          <Header />
           <ListingBody />
         </ContextProducts.Provider>
       </ContextValue.Provider>
