@@ -1,26 +1,25 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import "./styles.css";
-import { useContext, useState } from "react";
-import { ContextValue } from "../../../utils/context-value";
+import { useState } from "react";
 
-export default function Filter() {
-  const { setContextValue } = useContext(ContextValue);
+type Props = {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  onFilter: Function;
+};
 
-  type FormData = {
-    minValue?: number;
-    maxValue?: number;
-  };
+type FormData = {
+  minValue?: number;
+  maxValue?: number;
+};
 
+export default function Filter({ onFilter }: Props) {
   const [formData, setFormData] = useState<FormData>({});
 
   function handleSubmit(event: any) {
     event.preventDefault();
     const min = Number(formData.minValue);
     const max = Number(formData.maxValue);
-    setContextValue({
-      valueMin: isNaN(min) ? undefined : min,
-      valueMax: isNaN(max) ? undefined : max,
-    });
+    onFilter(isNaN(min) ? undefined : min, isNaN(max) ? undefined : max);
   }
 
   function handleInputChange(event: any) {
